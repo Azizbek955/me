@@ -1,6 +1,25 @@
-ite a function called chop that takes a List as an argument. In this function, write the function body to remove the first and last elements and return None. 
-Next, write a function called middle . Write the function body so that this function takes a List as an argument and returns a new List containing all elements except the first and last elements.
-Write a program to call the above functions
+
+import urllib.request
+url = "https://www.py4e.com/code3/romeo.txt"
+
+
+urllib.request.urlretrieve(url, "romeo.txt")
+
+
+Special_word = []
+
+
+with open("romeo.txt", "r") as file:
+
+    for line in file:
+
+        words = line.split()
+
+        for word in words:
+            if word not in Special_word:
+                Special_word.append(word)
+
+Special_word.sort()
 
 for word in Special_word:
     print(word)
